@@ -20,6 +20,15 @@ public class Atividade {
     private int totalHorasJuridica;
     private int totalHorasExecutiva;
     private int totalHorasFinanceira;
+    private Sede sede;
+
+    public Sede getSede() {
+        return sede;
+    }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
 
     public String getTitulo() {
         return titulo;

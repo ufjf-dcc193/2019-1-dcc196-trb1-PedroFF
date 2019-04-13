@@ -16,6 +16,15 @@ public class Membro {
     private String email;
     private String dataEntrada;
     private String dataSaida;
+    private Sede sede;
+
+    public Sede getSede() {
+        return sede;
+    }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
 
     public String getNome() {
         return nome;

@@ -1,9 +1,6 @@
 package br.ufjf.dcc193.tbr01.trabalho01.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +16,6 @@ public class Sede {
     private String bairro;
     private String telefone;
     private String enderecoWeb;
-    private List<Membro> membros = new ArrayList<Membro>();
-    private List<Atividade> atividades = new ArrayList<Atividade>();
 
     public Long getId() {
         return id;
@@ -76,21 +71,5 @@ public class Sede {
 
     public void setEnderecoWeb(String enderecoWeb) {
         this.enderecoWeb = enderecoWeb;
-    }
-
-    public List<Membro> getMembros() {
-        return membros;
-    }
-
-    public void setMembros(List<Membro> membros) {
-        this.membros = membros;
-    }
-
-    public List<Atividade> getAtividades() {
-        return atividades;
-    }
-
-    public void setAtividades(List<Atividade> atividades) {
-        this.atividades = atividades;
     }
 }
