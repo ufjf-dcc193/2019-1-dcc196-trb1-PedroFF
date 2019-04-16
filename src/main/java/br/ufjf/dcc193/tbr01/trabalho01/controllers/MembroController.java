@@ -71,12 +71,10 @@ public class MembroController {
         return new RedirectView("/membros.html?alterado=true");
     }
 
-    @RequestMapping("membro-deletar/{id}")
-    public ModelAndView membroDeletar(@PathVariable Long id){
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("membro-deletar");
+    @RequestMapping("membro-deletar/{id}.html")
+    public RedirectView membroDeletar(@PathVariable Long id){
         rep.deleteById(id);
-        return  mv;
+        return new RedirectView("/membros.html?deletado=true");
     }
 
 }

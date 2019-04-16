@@ -1,20 +1,20 @@
 <%@include file="jspf/cabecalho.jspf" %>
 <%@page pageEncoding="UTF-8" %>
-<div class="row col-md-12">
-    <div class="col-md-6">
-        <h3>Listar Membros</h3>
+<c:if test="${param.deletado==true}">
+    <div class="alert alert-success alert-dismissible fade show col-lg-12 text-center" role="alert">
+        <strong>Exclusão realizada com sucesso</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-    <div class="col-md-6 right">
-        <a href="membro-cadastrar.html" class="btn btn-primary">Criar Membro</a>
-    </div>
-</div>
+</c:if>
 <c:if test="${param.alterado==true}">
-<div class="alert alert-success alert-dismissible fade show col-lg-12 text-center" role="alert">
-    <strong>Alteração realizada com sucesso</strong>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+    <div class="alert alert-success alert-dismissible fade show col-lg-12 text-center" role="alert">
+        <strong>Alteração realizada com sucesso</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 </c:if>
 <c:if test="${param.cadastrado==true}">
     <div class="alert alert-success alert-dismissible fade show col-lg-12 text-center" role="alert">
@@ -24,6 +24,16 @@
         </button>
     </div>
 </c:if>
+<br/>
+<div class="row col-md-12">
+    <div class="col-md-6">
+        <h3>Listar Membros</h3>
+    </div>
+    <div class="col-md-6 right">
+        <a href="membro-cadastrar.html" class="btn btn-primary">Criar Membro</a>
+    </div>
+</div>
+<br/>
 <c:choose>
     <c:when test="${empty membros}">
         <div class="text-center">

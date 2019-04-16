@@ -1,5 +1,7 @@
 package br.ufjf.dcc193.tbr01.trabalho01.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -13,7 +15,9 @@ public class Membro {
     private String nome;
     private String funcao;
     private String email;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataEntrada;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataSaida;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
