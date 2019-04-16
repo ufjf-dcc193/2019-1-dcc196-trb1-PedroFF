@@ -1,5 +1,7 @@
 <%@include file="jspf/cabecalho.jspf" %>
-
+<%@page pageEncoding="UTF-8" %>
+<h3>Listar Sedes</h3>
+<button class="btn btn-primary">Criar Sede</button>
 <c:choose>
     <c:when test="${empty sedes}">
         <div class="text-center">
@@ -7,7 +9,7 @@
         </div>
     </c:when>
     <c:otherwise>
-        <table class="table-striped">
+        <table class="table table-striped">
             <thead>
             <th>Sede</th>
             <th>Estado</th>
@@ -18,18 +20,22 @@
             <th>Ações</th>
             </thead>
             <tbody>
+            <c:forEach  var="sede" items="${sedes}">
             <tr>
-                <td>{$sede.getNomeFantasia()}</td>
-                <td>{$sede.getEstado()}</td>
-                <td>{$sede.getCidade()}</td>
-                <td>{$sede.getBairro}</td>
-                <td>{$sede.getTelefone}</td>
-                <td>{$sede.getSite()}</td>
-                <td colspan="2">
+                <td>${sede.getNomeFantasia()}</td>
+                <td>${sede.getEstado()}</td>
+                <td>${sede.getCidade()}</td>
+                <td>${sede.getBairro()}</td>
+                <td>${sede.getTelefone()}</td>
+                <td><a>${sede.getSite()}</a></td>
+                <td colspan="4">
+                    <a href="" class="btn btn-primary">Membros</a>
+                    <a href="" class="btn btn-primary">Atividades</a>
                     <a href="">Excluir</a>
                     <a href="">Editar</a>
                 </td>
             </tr>
+            </c:forEach>
             </tbody>
         </table>
     </c:otherwise>

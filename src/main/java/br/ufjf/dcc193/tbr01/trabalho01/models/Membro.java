@@ -1,9 +1,8 @@
 package br.ufjf.dcc193.tbr01.trabalho01.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
+
 
 @Entity
 public class Membro {
@@ -14,9 +13,24 @@ public class Membro {
     private String nome;
     private String funcao;
     private String email;
-    private String dataEntrada;
-    private String dataSaida;
+    private LocalDate dataEntrada;
+    private LocalDate dataSaida;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "sedeId", nullable = false)
     private Sede sede;
+
+    public Membro() {
+    }
+
+    public Membro(String nome, String funcao, String email, LocalDate dataEntrada, LocalDate dataSaida, Sede sede) {
+        this.nome = nome;
+        this.funcao = funcao;
+        this.email = email;
+        this.dataEntrada = dataEntrada;
+        this.dataSaida = dataSaida;
+        this.sede = sede;
+    }
 
     public Sede getSede() {
         return sede;
@@ -58,19 +72,21 @@ public class Membro {
         this.email = email;
     }
 
-    public String getDataEntrada() {
-        return dataEntrada;
-    }
-
-    public void setDataEntrada(String dataEntrada) {
-        this.dataEntrada = dataEntrada;
-    }
-
-    public String getDataSaida() {
+    public LocalDate getDataSaida() {
         return dataSaida;
     }
 
-    public void setDataSaida(String dataSaida) {
+    public void setDataSaida(LocalDate dataSaida) {
         this.dataSaida = dataSaida;
     }
+
+    public LocalDate getDataEntrada() {
+        return dataEntrada;
+    }
+
+    public void setDataEntrada(LocalDate dataEntrada) {
+        this.dataEntrada = dataEntrada;
+    }
+
+
 }

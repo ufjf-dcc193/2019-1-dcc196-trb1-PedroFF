@@ -1,5 +1,5 @@
 <%@include file="jspf/cabecalho.jspf" %>
-
+<%@page pageEncoding="UTF-8" %>
 <h2>Bem vindo!</h2>
 
 <hr>

@@ -8,21 +8,33 @@ import java.util.List;
 public class Sede {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long sedeId;
 
     private String nomeFantasia;
     private String estado;
     private String cidade;
     private String bairro;
     private String telefone;
-    private String enderecoWeb;
+    private String site;
 
-    public Long getId() {
-        return id;
+    public Sede() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Sede(String nomeFantasia, String estado, String cidade, String bairro, String telefone, String site) {
+        this.nomeFantasia = nomeFantasia;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.telefone = telefone;
+        this.site = site;
+    }
+
+    public Long getSedeId() {
+        return sedeId;
+    }
+
+    public void setSedeId(Long id) {
+        this.sedeId = id;
     }
 
     public String getNomeFantasia() {
@@ -65,11 +77,11 @@ public class Sede {
         this.telefone = telefone;
     }
 
-    public String getEnderecoWeb() {
-        return enderecoWeb;
+    public String getSite() {
+        return site;
     }
 
-    public void setEnderecoWeb(String enderecoWeb) {
-        this.enderecoWeb = enderecoWeb;
+    public void setSite(String site) {
+        this.site = site;
     }
 }
