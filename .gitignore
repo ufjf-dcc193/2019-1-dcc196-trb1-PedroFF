@@ -10,6 +10,8 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
+.~/trabalho1.db
+derby.log
 
 ### IntelliJ IDEA ###
 .idea
