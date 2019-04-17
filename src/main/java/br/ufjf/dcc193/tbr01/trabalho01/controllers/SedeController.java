@@ -24,7 +24,7 @@ public class SedeController {
         return mv;
     }
 
-    @GetMapping("sede-cadastrar")
+    @GetMapping("sede-cadastrar.html")
     public ModelAndView sedeCadastrar()
     {
         ModelAndView mv = new ModelAndView();
@@ -32,26 +32,26 @@ public class SedeController {
         return mv;
     }
 
-    @PostMapping("sede-cadastrar")
-    public RedirectView sedeCadastrarPost(@RequestBody Sede sede){
+    @PostMapping("sede-cadastrar.html")
+    public RedirectView sedeCadastrarPost(Sede sede){
         repSede.save(sede);
         return new RedirectView("/sedes.html?cadastrado=true");
     }
 
-    @RequestMapping("sede-alterar/{id}")
+    @RequestMapping("sede-editar/{id}.html")
     public ModelAndView sedeAlterar(@PathVariable Long id){
         ModelAndView mv = new ModelAndView();
         mv.addObject("sede",repSede.getOne(id));
-        mv.setViewName("sede-alterar");
+        mv.setViewName("sede-editar");
         return mv;
     }
-    @RequestMapping(value = "sede-alterar", method = RequestMethod.POST)
-    public RedirectView sedeAlterarPost(@RequestBody Sede sede){
+    @RequestMapping(value = "sede-editar.html", method = RequestMethod.POST)
+    public RedirectView sedeAlterarPost(Sede sede){
         repSede.save(sede);
         return new RedirectView("/sedes.html?alterado=true");
     }
 
-    @RequestMapping("sede-deletar/{id}")
+    @RequestMapping("sede-deletar/{id}.html")
     public RedirectView sedeDeletar(@PathVariable Long id){
         repSede.deleteById(id);
         return new RedirectView("/sedes.html?deletado=true");

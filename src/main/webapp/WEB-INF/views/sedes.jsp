@@ -64,8 +64,8 @@
                 <td>${sede.getTelefone()}</td>
                 <td><a>${sede.getSite()}</a></td>
                 <td colspan="2">
-                    <a class="btn btn-primary" href="sede-editar/${membro.id}.html">Editar</a>
-                    <a class="btn btn-danger" href="sede-deletar/${membro.id}.html">Excluir</a>
+                    <a class="btn btn-primary" href="sede-editar/${sede.sedeId}.html">Editar</a>
+                    <a class="btn btn-danger" href="sede-deletar/${sede.sedeId}.html">Excluir</a>
                 </td>
             </tr>
             </c:forEach>
