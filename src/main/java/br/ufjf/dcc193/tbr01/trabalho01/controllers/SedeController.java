@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
+
 import java.util.List;
 
 @Controller
@@ -31,12 +33,9 @@ public class SedeController {
     }
 
     @PostMapping("sede-cadastrar")
-    public ModelAndView sedeCadastrarPost(@RequestBody Sede sede){
+    public RedirectView sedeCadastrarPost(@RequestBody Sede sede){
         repSede.save(sede);
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("cadastro", true);
-        mv.setViewName("sede-cadastrar");
-        return mv;
+        return new RedirectView("/sedes.html?cadastrado=true");
     }
 
     @RequestMapping("sede-alterar/{id}")
@@ -47,19 +46,14 @@ public class SedeController {
         return mv;
     }
     @RequestMapping(value = "sede-alterar", method = RequestMethod.POST)
-    public ModelAndView sedeAlterarPost(@RequestBody Sede sede){
-        ModelAndView mv = new ModelAndView();
+    public RedirectView sedeAlterarPost(@RequestBody Sede sede){
         repSede.save(sede);
-        mv.addObject("alteracao", true);
-        mv.setViewName("sede-alterar");
-        return mv;
+        return new RedirectView("/sedes.html?alterado=true");
     }
 
     @RequestMapping("sede-deletar/{id}")
-    public ModelAndView sedeDeletar(@PathVariable Long id){
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("sede-deletar");
+    public RedirectView sedeDeletar(@PathVariable Long id){
         repSede.deleteById(id);
-        return  mv;
+        return new RedirectView("/sedes.html?deletado=true");
     }
 }

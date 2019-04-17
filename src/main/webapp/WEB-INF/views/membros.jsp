@@ -60,9 +60,9 @@
                     <td>${membro.getDataEntrada()}</td>
                     <td>${membro.getDataSaida()}</td>
                     <td>${membro.getSede().getNomeFantasia()}</td>
-                    <td colspan="4">
-                        <a href="membro-editar/${membro.id}.html">Editar</a>
-                        <a href="membro-deletar/${membro.id}.html">Excluir</a>
+                    <td colspan="2">
+                        <a class="btn btn-primary" href="membro-editar/${membro.id}.html">Editar</a>
+                        <a class="btn btn-danger" href="membro-deletar/${membro.id}.html">Excluir</a>
                     </td>
                 </tr>
             </c:forEach>
