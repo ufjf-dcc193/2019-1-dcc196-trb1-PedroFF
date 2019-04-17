@@ -24,19 +24,19 @@
     <div class="row form-group">
         <div class="col-md-3">
             <label>Horas Assistenciais</label>
-            <input required name="totalHorasAssistencial" type="time" class="form-control" >
+            <input required name="totalHorasAssistencial" type="number" class="form-control" min="0">
         </div>
         <div class="col-md-3">
             <label>Horas Jurídicas</label>
-            <input required name="totalHorasJuridica" type="time" class="form-control">
+            <input required name="totalHorasJuridica" type="number" class="form-control" min="0">
         </div>
         <div class="col-md-3">
             <label>Horas Financeiras</label>
-            <input required name="totalHoraFinanceira" type="time" class="form-control">
+            <input required name="totalHoraFinanceira" type="number" class="form-control" min="0">
         </div>
         <div class="col-md-3">
             <label>Horas Executivas</label>
-            <input required name="totalHorasExecutiva" type="time" class="form-control">
+            <input required name="totalHorasExecutiva" type="number" class="form-control" min="0">
         </div>
     </div>
     <div class="form-group">

@@ -59,7 +59,7 @@
             <tbody>
             <c:forEach  var="atividade" items="${atividades}">
                 <tr>
-                    <td>${atividade.nome}</td>
+                    <td>${atividade.titulo}</td>
                     <td>${atividade.descricao}</td>
                     <td>${atividade.dataIni}</td>
                     <td>${atividade.dataFim}</td>

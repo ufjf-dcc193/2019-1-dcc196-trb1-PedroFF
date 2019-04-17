@@ -33,7 +33,7 @@ public class AtividadeController {
     }
 
     @RequestMapping("atividades-sede/{idSede}.html")
-    public ModelAndView membros(@PathVariable Long idSede)
+    public ModelAndView atividades(@PathVariable Long idSede)
     {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("atividades-sede");
@@ -43,7 +43,7 @@ public class AtividadeController {
     }
 
     @RequestMapping("atividade-cadastrar.html")
-    public ModelAndView membroCadastrar()
+    public ModelAndView atividadeCadastrar()
     {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("atividade-cadastrar");
@@ -53,13 +53,13 @@ public class AtividadeController {
     }
 
     @RequestMapping(value = "atividade-cadastrar.html", method = RequestMethod.POST)
-    public RedirectView membroCadastrarPost( Atividade Atividade){
+    public RedirectView atividadeCadastrarPost(Atividade Atividade){
         rep.save(Atividade);
         return new RedirectView("/atividades.html?cadastrado=true");
     }
 
-    @RequestMapping("atividade-editar/{id}.html")
-    public ModelAndView membroAlterar(@PathVariable Long id){
+    @RequestMapping("/atividade-editar/{id}.html")
+    public ModelAndView atividadeAlterar(@PathVariable Long id){
         ModelAndView mv = new ModelAndView();
         mv.addObject("atividade",rep.getOne(id));
         mv.setViewName("atividade-editar");
@@ -67,14 +67,14 @@ public class AtividadeController {
         mv.addObject("sedes", sedes);
         return mv;
     }
-    @RequestMapping(value = "atividade-editar.html", method = RequestMethod.POST)
-    public RedirectView membroAlterarPost(Atividade atividade){
+    @RequestMapping(value = "/atividade-editar.html", method = RequestMethod.POST)
+    public RedirectView atividadeAlterarPost(Atividade atividade){
         rep.save(atividade);
         return new RedirectView("/atividades.html?alterado=true");
     }
 
-    @RequestMapping("atividade-deletar/{id}.html")
-    public RedirectView membroDeletar(@PathVariable Long id){
+    @RequestMapping("/atividade-deletar/{id}.html")
+    public RedirectView atividadeDeletar(@PathVariable Long id){
         rep.deleteById(id);
         return new RedirectView("/atividades.html?deletado=true");
     }

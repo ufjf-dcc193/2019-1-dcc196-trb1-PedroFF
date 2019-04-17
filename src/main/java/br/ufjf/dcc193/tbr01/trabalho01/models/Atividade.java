@@ -18,8 +18,8 @@ public class Atividade {
     private LocalDate dataIni;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataFim;
-    private String totalHorasAssistencial;
-    private String totalHorasJuridica;
+    private int totalHorasAssistencial;
+    private int totalHorasJuridica;
     private int totalHorasExecutiva;
     private int totalHorasFinanceira;
     private int totalHoras;
