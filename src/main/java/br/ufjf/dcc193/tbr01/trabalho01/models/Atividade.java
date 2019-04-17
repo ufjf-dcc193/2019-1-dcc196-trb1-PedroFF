@@ -1,5 +1,7 @@
 package br.ufjf.dcc193.tbr01.trabalho01.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -12,10 +14,12 @@ public class Atividade {
 
     private String titulo;
     private String descricao;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataIni;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataFim;
-    private int totalHorasAssistencial;
-    private int totalHorasJuridica;
+    private String totalHorasAssistencial;
+    private String totalHorasJuridica;
     private int totalHorasExecutiva;
     private int totalHorasFinanceira;
     private int totalHoras;

@@ -29,7 +29,7 @@
 
 <div class="row col-md-12">
     <div class="col-md-6">
-        <h3>Listar Sedes</h3>
+        <h3>Listar Atividades</h3>
     </div>
     <div class="col-md-6 right">
         <a href="/atividade-cadastrar.html" class="btn btn-primary">Criar Atividade</a>

@@ -54,7 +54,8 @@ public class AtividadeController {
 
     @RequestMapping(value = "atividade-cadastrar.html", method = RequestMethod.POST)
     public RedirectView membroCadastrarPost( Atividade Atividade){
-        rep.save(Atividade);return new RedirectView("/atividades.html?cadastrado=true");
+        rep.save(Atividade);
+        return new RedirectView("/atividades.html?cadastrado=true");
     }
 
     @RequestMapping("atividade-editar/{id}.html")

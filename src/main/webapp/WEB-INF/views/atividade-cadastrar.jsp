@@ -1,10 +1,10 @@
 <%@include file="jspf/cabecalho.jspf" %>
 <%@page pageEncoding="UTF-8" %>
 
-<form action="/atividade-cadastrar.html" method="post">
+<form action="atividade-cadastrar.html" method="post">
     <div class="form-group">
         <label>Atividade</label>
-        <input required type="text" name="atividade" class="form-control" placeholder="Digite a atividade">
+        <input required type="text" name="titulo" class="form-control" placeholder="Digite a atividade">
     </div>
     <div class="form-group">
         <label>descrição</label>
@@ -23,20 +23,20 @@
 
     <div class="row form-group">
         <div class="col-md-3">
-            <label>Horas Assistencias</label>
-            <input required type="number" min="0">
+            <label>Horas Assistenciais</label>
+            <input required name="totalHorasAssistencial" type="time" class="form-control" >
         </div>
         <div class="col-md-3">
             <label>Horas Jurídicas</label>
-            <input required type="number" min="0">
+            <input required name="totalHorasJuridica" type="time" class="form-control">
         </div>
         <div class="col-md-3">
             <label>Horas Financeiras</label>
-            <input required type="number" min="0">
+            <input required name="totalHoraFinanceira" type="time" class="form-control">
         </div>
         <div class="col-md-3">
             <label>Horas Executivas</label>
-            <input required type="number" min="0">
+            <input required name="totalHorasExecutiva" type="time" class="form-control">
         </div>
     </div>
     <div class="form-group">
