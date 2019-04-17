@@ -18,6 +18,7 @@ public class Atividade {
     private int totalHorasJuridica;
     private int totalHorasExecutiva;
     private int totalHorasFinanceira;
+    private int totalHoras;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "sedeId", nullable = false)
@@ -61,6 +62,14 @@ public class Atividade {
 
     public void setDataIni(LocalDate dataIni) {
         this.dataIni = dataIni;
+    }
+
+    public int getTotalHoras() {
+        return totalHoras;
+    }
+
+    public void setTotalHoras(int totalHoras) {
+        this.totalHoras = totalHoras;
     }
 
     public LocalDate getDataFim() {
