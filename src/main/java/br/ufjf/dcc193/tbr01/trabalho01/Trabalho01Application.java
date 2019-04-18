@@ -1,7 +1,9 @@
 package br.ufjf.dcc193.tbr01.trabalho01;
 
+import br.ufjf.dcc193.tbr01.trabalho01.models.Atividade;
 import br.ufjf.dcc193.tbr01.trabalho01.models.Membro;
 import br.ufjf.dcc193.tbr01.trabalho01.models.Sede;
+import br.ufjf.dcc193.tbr01.trabalho01.repositories.AtividadeRepository;
 import br.ufjf.dcc193.tbr01.trabalho01.repositories.MembroRepository;
 import br.ufjf.dcc193.tbr01.trabalho01.repositories.SedeRepository;
 import org.springframework.boot.SpringApplication;
@@ -30,6 +32,24 @@ public class Trabalho01Application {
         memRep.save(membro2);
         memRep.save(membro3);
         memRep.save(membro4);
+
+        AtividadeRepository atvRep = ctx.getBean(AtividadeRepository.class);
+        Atividade atv1 = new Atividade("Elaboração de plano de atividades", "reunião mensal", null,
+                null, 0, 6, 7, 2, 15, sede1);
+        Atividade atv2 = new Atividade("Atividade voluntária", "Voluntários, ajudando idosos", null,
+                null, 0, 6, 12, 2, 20, sede1);
+        Atividade atv3 = new Atividade("Elaboração de plano de atividades", "reunião mensal", null,
+                null, 0, 6, 7, 2, 15, sede2);
+        Atividade atv4 = new Atividade("Atividade voluntária", "Voluntários ajudando idosos", null,
+                null, 3, 6, 7, 6, 30, sede2);
+        Atividade atv5 = new Atividade("Atividade de pesquisa", "Pesquisa de campo", null,
+                null, 2, 3, 3, 2, 10, sede2);
+
+        atvRep.save(atv1);
+        atvRep.save(atv2);
+        atvRep.save(atv3);
+        atvRep.save(atv4);
+        atvRep.save(atv5);
     }
 
 }

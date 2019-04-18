@@ -50,7 +50,7 @@
     </div>
     <button type="submit" class="btn btn-success">Cadastrar</button>
     <button type="reset" class="btn btn-secondary">Limpar</button>
-    <a href="/membros.html" class="btn btn-danger">Cancelar</a>
+    <a href="/atividades.html" class="btn btn-danger">Cancelar</a>
 </form>
 
 
