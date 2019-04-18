@@ -1,2 +1,4 @@
-# 2019-1-dcc196-trb1-PedroFF
-2019-1-dcc196-trb1-PedroFF created by GitHub Classroom
+# Pedro Fernandes Freitas
+Email: soufreitas.pedro@gmail.com
+
+Para rodar o sistema, basta fazer o clone e startar.
