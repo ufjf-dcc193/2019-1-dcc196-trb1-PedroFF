@@ -10,7 +10,6 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
-.~/trabalho1.db
 derby.log
 
 ### IntelliJ IDEA ###
@@ -18,6 +17,8 @@ derby.log
 *.iws
 *.iml
 *.ipr
+.~/trabalho1.db
+derby.log
 
 ### NetBeans ###
 /nbproject/private/
