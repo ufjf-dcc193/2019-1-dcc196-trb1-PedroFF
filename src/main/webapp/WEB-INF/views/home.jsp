@@ -14,5 +14,8 @@
     <li>
         <a href="atividades.html">Atividades</a>
     </li>
+    <li>
+        <a href="/horas-por-sede.html">Total de Horas</a>
+    </li>
 </ul>
 <%@include file="jspf/rodape.jspf" %>

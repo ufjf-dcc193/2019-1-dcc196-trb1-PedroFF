@@ -2,16 +2,19 @@ package br.ufjf.dcc193.tbr01.trabalho01.controllers;
 
 import br.ufjf.dcc193.tbr01.trabalho01.models.Atividade;
 import br.ufjf.dcc193.tbr01.trabalho01.models.Sede;
+import br.ufjf.dcc193.tbr01.trabalho01.models.TotalHora;
 import br.ufjf.dcc193.tbr01.trabalho01.repositories.AtividadeRepository;
 import br.ufjf.dcc193.tbr01.trabalho01.repositories.SedeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -78,4 +81,19 @@ public class AtividadeController {
         rep.deleteById(id);
         return new RedirectView("/atividades.html?deletado=true");
     }
+
+    @GetMapping("horas-por-sede.html")
+    public ModelAndView totais() {
+        List<Sede> sedes = sedeRep.findAll();
+        List<TotalHora> totais = new ArrayList<>();
+        for (Sede sede : sedes) {
+            Integer totalAssis= rep.sumTotalHorasAssistencialAtividades(sede.getSedeId());
+            Integer totalJur= rep.sumTotalHorasExecutivaAtividades(sede.getSedeId());
+            Integer totalFin= rep.sumTotalHorasFinanceiraAtividades(sede.getSedeId());
+            Integer totalExec = rep.sumTotalHorasExecutivaAtividades(sede.getSedeId());
+            totais.add(new TotalHora(sede,totalAssis,totalJur,totalFin,totalExec));
+        }
+        return new ModelAndView().addObject("totais",totais);
+    }
+
 }

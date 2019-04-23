@@ -28,7 +28,7 @@ public class Atividade {
     @JoinColumn(name = "sedeId", nullable = false)
     private Sede sede;
 
-    public Atividade(String titulo, String descricao, LocalDate dataIni, LocalDate dataFim, int totalHorasAssistencial, int totalHorasJuridica, int totalHorasExecutiva, int totalHorasFinanceira, int totalHoras, Sede sede) {
+    public Atividade(String titulo, String descricao, LocalDate dataIni, LocalDate dataFim, int totalHorasAssistencial, int totalHorasJuridica, int totalHorasExecutiva, int totalHorasFinanceira, Sede sede) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataIni = dataIni;
@@ -37,9 +37,10 @@ public class Atividade {
         this.totalHorasJuridica = totalHorasJuridica;
         this.totalHorasExecutiva = totalHorasExecutiva;
         this.totalHorasFinanceira = totalHorasFinanceira;
-        this.totalHoras = totalHoras;
         this.sede = sede;
     }
+
+    public Atividade(){}
 
     public Sede getSede() {
         return sede;
@@ -79,14 +80,6 @@ public class Atividade {
 
     public void setDataIni(LocalDate dataIni) {
         this.dataIni = dataIni;
-    }
-
-    public int getTotalHoras() {
-        return totalHoras;
-    }
-
-    public void setTotalHoras(int totalHoras) {
-        this.totalHoras = totalHoras;
     }
 
     public LocalDate getDataFim() {

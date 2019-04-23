@@ -24,10 +24,10 @@ public class Trabalho01Application {
         rep.save(sede2);
 
         MembroRepository memRep = ctx.getBean(MembroRepository.class);
-        Membro membro = new Membro("Zeca","Tesoureiro", "zeca@gmail.com",null ,null, sede1);
-        Membro membro2 = new Membro("Lucas","Presidente", "lucas@gmail.com",null ,null, sede1);
-        Membro membro3 = new Membro("Maria","Vice-Presidente", "maria@gmail.com",null ,null, sede1);
-        Membro membro4 = new Membro("Pablo","RH", "pablo@gmail.com",null ,null, sede2);
+        Membro membro = new Membro("Zeca", "Tesoureiro", "zeca@gmail.com", null, null, sede1);
+        Membro membro2 = new Membro("Lucas", "Presidente", "lucas@gmail.com", null, null, sede1);
+        Membro membro3 = new Membro("Maria", "Vice-Presidente", "maria@gmail.com", null, null, sede1);
+        Membro membro4 = new Membro("Pablo", "RH", "pablo@gmail.com", null, null, sede2);
         memRep.save(membro);
         memRep.save(membro2);
         memRep.save(membro3);
@@ -35,15 +35,15 @@ public class Trabalho01Application {
 
         AtividadeRepository atvRep = ctx.getBean(AtividadeRepository.class);
         Atividade atv1 = new Atividade("Elaboração de plano de atividades", "reunião mensal", null,
-                null, 0, 6, 7, 2, 15, sede1);
+                null, 0, 6, 7, 2, sede1);
         Atividade atv2 = new Atividade("Atividade voluntária", "Voluntários, ajudando idosos", null,
-                null, 0, 6, 12, 2, 20, sede1);
+                null, 0, 6, 12, 2, sede1);
         Atividade atv3 = new Atividade("Elaboração de plano de atividades", "reunião mensal", null,
-                null, 0, 6, 7, 2, 15, sede2);
+                null, 0, 6, 7, 2, sede2);
         Atividade atv4 = new Atividade("Atividade voluntária", "Voluntários ajudando idosos", null,
-                null, 3, 6, 7, 6, 30, sede2);
+                null, 3, 6, 7, 6, sede2);
         Atividade atv5 = new Atividade("Atividade de pesquisa", "Pesquisa de campo", null,
-                null, 2, 3, 3, 2, 10, sede2);
+                null, 2, 3, 3, 2, sede2);
 
         atvRep.save(atv1);
         atvRep.save(atv2);
