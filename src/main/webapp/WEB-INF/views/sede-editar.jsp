@@ -35,7 +35,7 @@
                    value="${sede.telefone}"
                    required>
         </div>
-		<input type="hidden" name="id" value={sede.sedeId}>
+		<input type="hidden" name="id" value="${sede.sedeId}">
     </div>
     <button type="submit" class="btn btn-success">Salvar</button>
     <button type="reset" class="btn btn-secondary">Limpar</button>
