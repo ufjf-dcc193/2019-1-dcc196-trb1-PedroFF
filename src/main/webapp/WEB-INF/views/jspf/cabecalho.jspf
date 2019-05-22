@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trabalho 1 DCC193</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="../../../images/favicon.ico">
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
