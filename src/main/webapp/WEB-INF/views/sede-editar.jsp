@@ -36,7 +36,7 @@
                    required>
         </div>
     </div>
-
+     <input type="hidden" name="id" value={sede.sedeId}>
     <button type="submit" class="btn btn-success">Salvar</button>
     <button type="reset" class="btn btn-secondary">Limpar</button>
     <a href="/sedes.html" class="btn btn-danger">Cancelar</a>
